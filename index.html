@@ -1,6 +1,37 @@
-<h1>Welcome!</h1>
+<h1><a href="#welcome" aria-hidden="true" class="anchor" id="header-welcome"></a>Welcome!</h1>
 <p>This is a test of the Github Pages deployment process.
-It's been a struggle getting to this point, but finally!</p>
+It’s been a struggle getting to this point, but finally I’ve done it!</p>
+<h2><a href="#some-styling-checks" aria-hidden="true" class="anchor" id="header-some-styling-checks"></a>Some styling checks</h2>
+<p>First, I’m checking that <a href="./test.html">this link works.</a>
+I’m hoping that it does, since I have no idea how to implement it<sup class="footnote-ref"><a href="#fn-1" id="fnref-1" data-footnote-ref>1</a></sup>.
+I may also have to translate between the <code>.md</code> links I’m writing and the <code>.html</code> links I’m hoping will be generated.</p>
+<p>It seems I will have to change this code:</p>
+<pre><code class="language-rust">let content = read_to_string(&amp;p).ok()?;
+let html = markdown_to_html(&amp;content, &amp;ComrakOptions::default());
+</code></pre>
+<ol>
+<li>The first element in a list</li>
+<li>The second element in a list</li>
+<li>The third</li>
+</ol>
+<ul>
+<li><input type="checkbox" disabled="" /> Hopefully this is a checkbox, don’t know how this will be implemented.</li>
+<li><input type="checkbox" disabled="" checked="" /> This should be checked off.</li>
+</ul>
+<p>Those are all the tests I can think of right now, does MD have table support?</p>
+<p>Firstly, $x=3$.
+Next, as per the formula
+$ x + 1 = x - 1 + 2
+x + 1 = 3 - 1 + 2
+=&gt; x = 4
+$</p>
+<section class="footnotes" data-footnotes>
+<ol>
+<li id="fn-1">
+<p>Like this hopefully! <a href="#fnref-1" class="footnote-backref" data-footnote-backref aria-label="Back to content">↩</a></p>
+</li>
+</ol>
+</section>
 <style>html {
     font-size: 100%;
     overflow-y: scroll;
@@ -304,4 +335,10 @@ td {
     h3 {
         page-break-after: avoid;
     }
-}</style>
+}</style><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/go.min.js"></script>
+
+<script>hljs.highlightAll();</script>
