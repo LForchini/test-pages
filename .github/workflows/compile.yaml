@@ -1,0 +1,26 @@
+name: compile-markdown
+run-name: Compiling Markdown
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{secrets.PAT}}
+
+      - uses: ZacJW/markdown-html-action@1.1.0
+        with:
+          input_files: '["src/*.md"]'
+          output_files: '["build/out.html"]'
+          builtin_stylesheet: "src/style.css"
+
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
