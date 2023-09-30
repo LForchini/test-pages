@@ -4,7 +4,7 @@ run-name: Compiling Markdown
 on:
   push:
     branches:
-      - master
+      - main
 
   workflow_dispatch:
 
