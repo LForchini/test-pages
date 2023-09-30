@@ -16,13 +16,18 @@ jobs:
         with:
           token: ${{ github.token }}
 
-      - uses: ZacJW/markdown-html-action@1.1.0
+      - uses: actions-rs/toolchain@v1
         with:
-          input_files: '[["src/*.md"]]'
-          output_files: '["build/out.html"]'
-          builtin_stylesheet: "src/style.css"
+          toolchain: stable
+      - uses: actions-rs/cargo@v1
+        with:
+          command: install
+          args: mdify
+
+      - name: Compile Markdown
+        run: mdify -o build src
 
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          publish_dir: build
