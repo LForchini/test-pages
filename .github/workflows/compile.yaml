@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          token: ${{ secrets.token }}
+          token: ${{ github.token }}
 
       - uses: ZacJW/markdown-html-action@1.1.0
         with:
