@@ -25,7 +25,7 @@ jobs:
           args: mdify
 
       - name: Compile Markdown
-        run: mdify -o build src
+        run: mdify -s src/style.css -o build src
 
       - uses: peaceiris/actions-gh-pages@v3
         with:
